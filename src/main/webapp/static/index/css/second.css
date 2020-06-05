@@ -1,0 +1,87 @@
+.child_title{
+	margin-top: 0.5rem;
+	margin-bottom: 0.2rem;
+	color: #748799;
+}
+.row_2_3k{
+	height: 2.8rem;
+	background-color: #fff;
+}
+.col_1_1{
+	width: 33.29%;
+	height: 2.8rem;
+	/*border: 1px solid red;*/
+}
+.row_2_3k .col_1_1 .cread{
+	width: 1.28rem;
+	height: 1.28rem;
+	border: 1px solid #C4E1FD;
+	border-radius: 50%;
+	position: relative;
+	top: 8%;
+	left: 8%;
+}
+.row_2_3k .col_1_1 .radiu{
+	width: 1.5rem;
+	height: 1.5rem;
+	box-shadow: 0 0 0 1px rgba(66,154,253, .2);
+	/*margin-top: 10px;*/
+	border-radius: 50%;
+	position: relative;
+	top: 25%;
+	left: 10%;
+}
+.row_2_3k .col_1_1 .radiu1{
+	width: 1.5rem;
+	height: 1.5rem;
+	box-shadow: 0 0 0 1px rgba(255,198,44, .2);
+	/*margin-top: 10px;*/
+	border-radius: 50%;
+	position: relative;
+	top: 25%;
+	left: 10%;
+}
+.row_2_3k .col_1_1 .radiu2{
+	width: 1.5rem;
+	height: 1.5rem;
+	box-shadow: 0 0 0 2px rgba(32,201,104, .2);
+	/*margin-top: 10px;*/
+	border-radius: 50%;
+	position: relative;
+	top: 25%;
+	left: 10%;
+}
+.cread .remain{
+	font-size: 0.13rem;
+	color: #BF9799;
+	position: relative;
+	top: -0.5rem;
+	left: 0.25rem;
+}
+.col_1_1 .sat{
+	position: relative;
+	top: -0.8rem;
+	left: 2.5rem;
+}
+.col_1_1 .sat>p:nth-child(2){
+	margin-top: 0.5rem;
+}
+.col_1_1 .sat .last{
+	font-size: 0.14rem;
+	color: #BF9799;
+}
+.col_1_1 .sat .par_1:before{
+	content: '';
+	display: inline-block;
+	width: 9px;
+	height: 9px;
+	background-image: url(../img/index/icons_li_style.png);
+	background-repeat: no-repeat;
+	background-position: -6px -6px;
+	position:absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+

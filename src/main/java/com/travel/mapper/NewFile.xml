@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shoppingMall.dao.BusinessInfoDao">
+	<resultMap id="businessInfoMap" type="com.shoppingMall.bean.Business">
+	<result column="id" jdbcType="INTEGER" property="id" />
+		<result column="shop_name" jdbcType="VARCHAR" property="shopName" />
+		<result column="phone" jdbcType="VARCHAR" property="phone" />
+		<result column="password" jdbcType="VARCHAR" property="password" />
+		<result column="sales_volume" jdbcType="INTEGER" property="salesVolume" />
+		<result column="head_portrait" jdbcType="VARCHAR" property="headPortrait" />
+		<result column="address" jdbcType="VARCHAR" property="address" />
+		<result column="brief_introduction" jdbcType="VARCHAR" property="briefIntroduction" />
+		<result column="commodity_id" jdbcType="INTEGER" property="commodityId" />
+		<collection property="commodity" ofType="com.shoppingMall.bean.Commodity">
+		<result column="c_id" jdbcType="INTEGER" property="cId" />
+		<result column="business_id" jdbcType="INTEGER" property="businessId" />
+		<result column="trade_name" jdbcType="VARCHAR" property="tradeName" />
+		<result column="price" jdbcType="INTEGER" property="price" />
+		<result column="type" jdbcType="VARCHAR" property="type" />
+		<result column="picture" jdbcType="VARCHAR" property="picture" />
+		<result column="stock" jdbcType="INTEGER" property="stock" />
+		<result column="describe" jdbcType="VARCHAR" property="describe" />
+		
+		
+		</collection>
+	</resultMap>
+	<select id="selectBusiness" resultMap="businessInfoMap">
+
+		<!-- SELECT * FROM business_info -->
+				 SELECT * FROM business_info b right join commodity_info c on b.commodity_id=c.business_id
+	</select>
+	
+</mapper>

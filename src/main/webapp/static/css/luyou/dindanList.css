@@ -1,0 +1,31 @@
+@charset "UTF-8";
+body{
+    background-color: #faf8f8248248248 ;
+  
+}
+.card-body{
+	margin: 0px;
+	padding: 0px;
+	
+}
+.card-header{
+	background-color: white;
+}
+.card-header a{
+	margin-left:10px;
+	margin-right: 20px;
+	font-weight:bolder;
+	
+}
+.table{
+	margin: 0;
+	
+}
+.thead-light {
+	text-align: center;
+	
+}
+.tbody-light{
+	
+	text-align: center;
+}

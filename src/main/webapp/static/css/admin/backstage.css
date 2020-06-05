@@ -1,0 +1,155 @@
+@charset "UTF-8";
+.image{
+		width: 60px;
+		height: auto;
+		max-height: 70px;
+	} 
+.col-sm-2{
+	padding: 0;
+}
+.page-header{
+	margin-bottom: 0px;
+}
+.page-search{
+	margin-bottom: 20px;
+}
+.table th{
+	text-align: left;
+	
+}
+.table tr td{
+	height: 80px;
+	min-width: 50px;
+	max-width:300px;
+	
+	line-height: 3;
+	text-align: left;
+}
+.table-bordered{
+	font-size: 13px;
+}
+.breadcrumb{
+	
+}
+.modal-footer{
+	text-align: center;
+}
+.modal-footer button{
+	margin-right: 20px;
+}
+.modal-footer-add {
+	width: 800px;
+}
+.control-label{
+	letter-spacing:5px;
+	text-align: justify;
+	color: #666;
+}
+.form-group{
+	margin-bottom: 15px;
+}
+.control-label{
+	font-weight: normal;
+	
+	}
+.form-control2{
+	 border-radius: 5px;
+	float: left;
+	width: 360px; 
+}
+.head-img {
+	height: 95px;
+	width: 95px;
+}
+.head-img img {
+	width: 95px;
+	height: 95px;
+}
+.divfile {
+	position: absolute;
+	/* border: 10x solid red; */
+	left: 18px;
+	top: 0px;
+}
+.imgInput{
+	height: 90px;
+	width: 90px;
+}
+.file {
+	opacity: 0;
+}
+
+.point{
+	padding-left: 12px;
+	height: 30px;
+	color: #999;
+}
+.input-tip{
+	display: none;
+	color: red;
+	line-height: 3
+	}
+
+ .img-chaho {
+	background: url(../../image/chaho.png);
+	width: 17px;
+	height: 17px;
+	background-size: cover;
+	 float: left;
+	margin-left:10px;
+	margin-right: 2px; 
+	margin-top: 10px;
+}
+
+.point-text{
+	/* margin-top: 8px; */
+	/* float: left; */
+}
+
+
+/* news */
+.news-group{
+	margin-bottom: 20px;
+	border-radius: 2px;
+	
+}
+.news-input{
+	width: 200px;
+}
+/* news */
+/* 修改个人信息头像 */
+.head-img2 {
+	height: 110px;
+	width: 110px;
+	border-radius: 50%;
+	position: absolute;
+	left: 75%;
+	top: 180px;
+}
+
+.head-img2 img {
+	width: 110px;
+	height: 110px;
+	border-radius: 50%;
+}
+.divfile2 {
+	position: absolute;
+	border: 10x solid red;
+/* 	left: 20%; */
+	 top: 0px; 
+}
+
+.file2 {
+	opacity: 0;
+}
+
+.xgtx2 {
+	text-align: center;
+	margin-top: 10px;
+	cursor: pointer;
+}
+.imgInput2{
+	height: 110px;
+	width: 110px;
+}
+/* 修改个人信息头像 */

@@ -1,0 +1,89 @@
+.box_fzt .row_1_1{
+	height: 3.9rem;
+}
+.box_fzt .row_1_1 .first{
+    display:block;
+    width: 25.46%;
+	background: #FFFFFF;
+	box-shadow:0px 0px 10px #ddd;
+}
+.box_fzt .row_1_1 .laser {
+	width: 27.21%;
+	padding: .3rem;
+	padding-bottom: .28rem;
+	margin: .2rem;
+	margin-top: 0;
+}
+.box_fzt .row_1_1 .laser1{
+	width: 44.97%;
+	padding: .3rem;
+	padding-bottom: .28rem;
+
+}
+.box_fzt .row_1_1 .first>img{
+	display: inline-block;
+	width: 1.16rem;
+	padding-top: .53rem;
+	text-align: center;
+	position: relative;
+	top: .32rem;
+	left: 38%;
+}
+.box_fzt .row_1_1 .first p>span{
+	color: #295382;
+	font-weight: bolder;
+	position: relative;
+	top: .68rem;
+	left: 26%;
+}
+.box_fzt .row_1_1 .first p>span:first-child{
+	font-size: 0.28rem;
+}
+
+.box_fzt .row_1_1 .first p>span:nth-child(2){
+	font-size: 0.76rem;
+}
+.box_fzt .row_1_1 .first p>span:nth-child(3){
+	font-size: 0.28rem;
+}
+ .gl_title{
+	font-weight: bolder;
+	font-size:0.23rem ;
+}
+#pie, #arpu{
+	height: 3.20rem;
+	width: 100%;
+}
+#montly,#total{
+	margin-top: 1%;
+	height: 3.8rem;
+	width: 100%;
+}
+.row_1_2{
+	margin-top: .2rem;
+	background: #fff;
+	height: 4.98rem;
+	padding: .3rem;
+	padding-bottom: .28rem;
+}
+/*.row_1_2 #daily{*/
+	/*border: 1px solid red;*/
+/*}*/
+/*底部*/
+.row_1_3{
+	margin-top: .2rem;
+	/*background: #fff;*/
+	height: 4.3rem;
+	/*padding-bottom: .28rem;*/
+	display: -webkit-flex; /* Safari */
+	display: block;
+	text-align:justify;
+}
+.row_1_3  .c_padding{
+	/*border: 1px solid red;*/
+	width: 49.5%;
+	height: 100%;
+	padding: .3rem;
+	padding-bottom: .0rem;
+	background: #ffffff;
+}

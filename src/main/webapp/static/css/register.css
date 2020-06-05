@@ -1,0 +1,185 @@
+* {
+    font-family:"微软雅黑";
+    box-sizing:border-box;
+}
+/*隐藏公共导航*/
+header {
+    display:none;
+}
+/*页面头部*/
+.navWrap {
+    width:100%;
+    height:59px;
+    background:#000;
+
+}
+/*版心*/
+.typePage {
+    height:100%;
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    overflow:hidden;
+}
+.logo {
+      margin-top:7.5px;
+    height: 45px;
+    float:left;
+}
+.indexLink{
+    float:right;
+display:inline-block;
+text-align:center;
+height:100%;
+line-height:59px;
+color:#FFF!important;
+font-size:15px;
+text-decoration:none;
+}
+.registerWrap {
+    width: 100%;
+    height: 810px;
+    background: url(../image/bglg.jpg) center center no-repeat;
+    background-size: cover;
+}
+.registerMain {
+    box-sizing:border-box;
+    width:100%;
+    height:770px;
+    background:rgba(0,0,0,0.55);
+    margin-top:20px;
+    padding:45px 20px;
+}
+.title1 {
+    width:100%;
+    text-align:center;
+    font-size:30px;
+    color:#fff;
+}
+.img1 {
+    margin:0 auto 35px auto;
+}
+#formpersonal {
+    width:415px;
+    height:auto;
+    margin:0 auto;
+}
+/*输入框样式*/
+.inputBox {
+    position:relative;
+}
+.input{
+    box-sizing:border-box;
+    width:410px;
+    height:42px;
+    border:solid 1px #89959f;
+    font-size:16px;
+    color:#fff;
+    padding:0 20px;
+    background-color:transparent;
+}
+input:-moz-placeholder {
+    color:#fff;
+}
+input::-webkit-input-placeholder{
+    color:#fff;
+}
+input:-ms-input-placeholder {
+    color:#fff;
+}
+.warning {
+    box-sizing:border-box;
+    padding:0 20px;
+    width:100%;
+    height:20px;
+    line-height:20px;
+    color:#fff;
+    font-size:14px;
+}
+.passwordTips {
+    display:inline-block;
+    width:145px;
+    padding-left:10px;
+    font-size:12px;
+    color:#fff!important;
+    position:absolute;
+    top:14px;
+    right:-140px;
+}
+.slideBox {
+    width:410px;
+    height:45px;
+}
+.btnRegister {
+    width:410px;
+    height:56px;
+    background:#ff0000;
+    font-size:20px;
+    color:#fff;
+    border:none;
+    outline:none;
+}
+ .passwordTips2 {
+        display:none;
+    }
+.verify-msg {
+    font-size:14px;
+    color:#666;
+}
+.verify-left-bar {
+    box-sizing:border-box;  
+}
+.verify-move-block {
+    box-sizing:border-box;  
+
+    background:#fff;
+}
+@media only screen and (max-width:1240px) {
+     .logo {
+        margin-top:7.5px;
+        margin-left:20px;
+        float:left;
+    }
+    .indexLink{
+        float:right;
+        display:inline-block;
+        text-align:center;
+        height:100%;
+        line-height:59px;
+        color:#FFF!important;
+        font-size:15px;
+        text-decoration:none;
+        margin-right:20px;
+    }
+}
+@media only screen and (max-width: 768px) {
+	#formpersonal {
+        max-width:415px;
+        width:90%;
+        height:auto;
+        margin:0 auto;
+    }
+    .infoEnter,.enterInfo_box,.inputBox,.input,.slideWrap,.btnRegister,.slideBox{
+         width:100%;
+    }
+    .passwordTips {
+        display:none;
+    }
+   
+    .passwordTips2 {
+        box-sizing:border-box;
+        display:block;
+        height:20px;
+        width:100%;
+        line-height:20px;
+        padding:0 20px;
+        font-size:12px;
+        color:#fff!important;
+    }
+     .passwordWarning {
+        /*display:none;*/
+    }
+    .confirmPasswordWarning {
+        /*display:none;*/
+    }
+}

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.travel.dao.WebDao">
+ <resultMap id="scenicSpotInfoMap" type="com.travel.bean.ScenicSpotInfo">
+		<result column="id" jdbcType="INTEGER" property="id" />
+		<result column="name" jdbcType="VARCHAR"
+			property="name" />
+		<result column="introduction" jdbcType="VARCHAR"
+			property="introduction" />
+		<result column="city" jdbcType="VARCHAR" property="city" />
+		<result column="photo" jdbcType="VARCHAR" property="photo" />
+		<result column="ticket" jdbcType="DATE" property="ticket" />
+		<result column="remarks" jdbcType="VARCHAR" property="remarks" />
+	</resultMap> 
+	<resultMap id="collectionInfoMap" type="com.travel.bean.CollectionInfo">
+		<result column="userid" jdbcType="INTEGER" property="userid" />
+		<result column="scenicSpotid" jdbcType="INTEGER" property="scenicSpotid" />
+		<collection property="scenicSpotInfo" ofType="com.travel.bean.ScenicSpotInfo">
+	 <id column="id" property="id" /> 
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="photo" jdbcType="VARCHAR" property="photo" />
+		<result column="ticket" jdbcType="VARCHAR" property="ticket" />
+		<result column="city" jdbcType="VARCHAR" property="city" />
+		</collection>
+	</resultMap> 
+	
+	
+	<resultMap id="travelsInfoMap" type="com.travel.bean.TravelsInfo">
+		<result column="id" jdbcType="INTEGER" property="id" />
+		<result column="userid" jdbcType="VARCHAR" property="userid" />
+		<result column="title" jdbcType="VARCHAR" property="title" />
+		<result column="cover" jdbcType="VARCHAR" property="cover" />
+		<result column="introduction" jdbcType="VARCHAR" property="introduction" />
+		<result column="text" jdbcType="VARCHAR" property="text" />
+		<result column="travelsphoto" jdbcType="VARCHAR" property="travelsphoto" />
+		<result column="fabulous" jdbcType="VARCHAR" property="fabulous" />
+		<result column="commentid" jdbcType="VARCHAR" property="commentid" />
+		<result column="creationtime" jdbcType="DATE" property="creationtime" />
+		<collection property="userInfo" ofType="com.travel.bean.UserInfo">
+	 <id column="id" property="id" /> 
+		<result column="user_name" jdbcType="VARCHAR" property="userName" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="photo" jdbcType="VARCHAR" property="photo" />
+		</collection>
+	</resultMap> 
+	
+	<resultMap id="commentInfoMap" type="com.travel.bean.CommentInfo">
+		<result column="pid" jdbcType="INTEGER" property="pid" />
+		<result column="userid" jdbcType="VARCHAR" property="userid" />
+		<result column="scenicSpotName" jdbcType="VARCHAR" property="scenicSpotName" />
+		<result column="dindanid" jdbcType="VARCHAR" property="dindanid" />
+		<result column="content" jdbcType="VARCHAR" property="content" />
+		<result column="fraction" jdbcType="VARCHAR" property="fraction" />
+		<result column="fabulous" jdbcType="VARCHAR" property="fabulous" />
+		<result column="commentaryTime" jdbcType="VARCHAR" property="commentaryTime" />
+		<collection property="userInfo" ofType="com.travel.bean.UserInfo">
+	 <id column="id" property="id" /> 
+		<result column="user_name" jdbcType="VARCHAR" property="userName" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="photo" jdbcType="VARCHAR" property="photo" />
+		</collection>
+	</resultMap> 
+	
+	<!-- 查询所有景点信息 -->
+	<select id="scenicSpot" resultMap="scenicSpotInfoMap">
+		SELECT * FROM scenic_spot_info
+	</select>
+	<!-- 查询更多景点信息 -->
+	<select id="scenicSpotMore" resultMap="scenicSpotInfoMap">
+		SELECT * FROM scenic_spot_info where 1=1 
+		<if test="day!=null">
+	and	day=#{day}
+		</if>  
+		<if test="type!=null">
+	and	type=#{type}
+		</if>  
+		<if test="city!=null">
+	and	city=#{city}
+		</if>  
+	</select>
+	
+		<!-- 根据id查询 -->
+	<select id="scenicSpotInfobyid" resultMap="scenicSpotInfoMap"
+		parameterType="com.travel.bean.ScenicSpotInfo">
+		SELECT * FROM scenic_spot_info
+		where id=#{id}
+	</select>
+	<!-- 产品类型查询 -->
+	<select id="typeList" resultType="com.travel.bean.ScenicSpotTypesInfo">
+		SELECT * FROM scenic_spot_types_info
+		where id=#{id}
+	</select>
+	<!-- 用户下单 -->
+	<insert id="addOrder" parameterType="com.travel.bean.Order"> 
+	insert into order_info (id,userName,name,number,total,contacts,phone,departureTime,state,creationTime) values
+		(null,#{userName},#{name},#{number},#{total},#{contacts},#{phone},#{departureTime},#{state},#{creationTime})
+	</insert>
+	
+<!--查询行程路线 -->
+<select id="itineraryList" resultType="com.travel.bean.ItineraryRouteInfo">
+		SELECT * FROM itinerary_route_info
+		where scenicSpotid=#{scenicSpotid}
+	</select>
+
+	<!--根据用户昵称 用户查询个人的旅游订单 -->
+	<select id="dindanList"	resultType="com.travel.bean.Order" >
+		SELECT * FROM order_info
+		where userName=#{userName}
+	</select>
+	<!--根据订单id查看详细订单信息 -->
+	<select id="orderListId"	resultType="com.travel.bean.Order" >
+		SELECT * FROM order_info
+		where id=#{id}
+	</select>
+	<!-- 修改付款状态 -->
+	<update id="modifyPayment"
+		parameterType="com.travel.bean.Order">
+		update order_info set
+		state=#{state},number=#{number},contacts=#{contacts},total=#{total},phone=#{phone}
+		where id=#{id}
+	</update>
+	<!-- 用户删除订单 -->
+	<delete id="delDindan"
+		parameterType="com.travel.bean.Order">
+		delete from order_info where id=#{id}
+	</delete>
+	
+	<!-- 用户的个人信息展示 -->
+	<select id="persionUserInfoList"  resultType="com.travel.bean.UserInfo">
+		select * from tourist_info where id = #{id}
+	</select>
+	
+	<!-- 用户更新个人信息 -->
+	<update id="updateUserInfo"
+		parameterType="com.travel.bean.UserInfo">
+		update tourist_info set
+		user_name=#{userName},name=#{name},gender=#{gender},birthday=#{birthday},phone=#{phone},mailbox=#{mailbox},address=#{address}
+		where id=#{id}
+	</update>
+	<!-- 用户修改头像 -->
+	<update id="changePhoto"
+		parameterType="com.travel.bean.UserInfo">
+		update tourist_info set
+		photo=#{photo}
+		where id=#{id}
+	</update>
+	<!-- 校验旧密码是否正确 -->
+	<select id="checkOldPwd"  resultType="com.travel.bean.UserInfo">
+		select * from tourist_info where password = #{password} and id = #{id}
+	</select>
+	<!-- 修改密码 -->
+	<update id="updateUserPwd"
+		parameterType="com.travel.bean.UserInfo">
+		update tourist_info set
+		password=#{password}
+		where id=#{id}
+	</update>
+	<!-- 用户收藏景点 -->
+	<insert id="addCollection" parameterType="com.travel.bean.CollectionInfo"> 
+	insert into collection_info (id,userid,scenicSpotid) values
+		(null,#{userid},#{scenicSpotid})
+	</insert>
+	<!-- 用户取消收藏景点信息 -->
+	<delete id="delCollection"
+		parameterType="com.travel.bean.CollectionInfo">
+		delete from collection_info where userid=#{userid} and scenicSpotid=#{scenicSpotid}
+	</delete>
+	<!-- 查询该用户是否已经收藏了该景点 -->
+	<select id="checkCollection" parameterType="com.travel.bean.CollectionInfo" resultType="int">
+		SELECT count(*) FROM collection_info
+		where userid=#{userid} and scenicSpotid=#{scenicSpotid}
+	</select>
+	<!-- 查询我的收藏 -->
+	<select id="collectionSelect" resultMap="collectionInfoMap">
+		SELECT s.id,s.name,s.photo,s.city,s.ticket,c.userid FROM collection_info c left join scenic_spot_info s on c.scenicSpotid=s.id
+		where userid=#{userid}
+	</select>
+	<!-- 用户删除个人收藏 -->
+	<delete id="delCcollection"
+		parameterType="com.travel.bean.CollectionInfo">
+		delete from collection_info where scenicSpotid=#{scenicSpotid}
+	</delete>
+	<!-- 预定须知查询 -->
+	<select id="reservationList" resultType="com.travel.bean.ReservationInfo">
+		SELECT * FROM notice_of_reservation_info
+	</select>
+	
+	<!-- 游记展示 -->
+	<select id="travelsList" resultMap="travelsInfoMap">
+		SELECT * FROM travels_info t left join tourist_info u on t.userid=u.id where 1=1 
+		<if test="userid!=null and userid!='' ">
+	and	userid=#{userid}
+		</if>  
+	</select>
+	<!-- 跳转并展示游记详情 -->
+	<select id="travelsDetails" resultMap="travelsInfoMap">
+		SELECT * FROM travels_info t left join tourist_info u on t.userid=u.id where t.id=#{id}
+	</select>
+	<!-- 添加游记 -->
+	<insert id="addTravels" parameterType="com.travel.bean.TravelsInfo"> 
+	insert into travels_info (id,userid,cover,title,introduction,text,creationtime) values
+		(null,#{userid},#{cover},#{title},#{introduction},#{text},#{creationtime})
+	</insert>
+	
+	<!-- 用户评论 -->
+	<insert id="comment" parameterType="com.travel.bean.CommentInfo"> 
+	insert into comment_info (pid,userid,scenicSpotName,content,fraction,dindanid,commentaryTime) values
+		(null,#{userid},#{scenicSpotName},#{content},#{fraction},#{dindanid},#{commentaryTime})
+	</insert>
+	<!-- 评论后修改订单状态 -->
+	<update id="modifyState"
+		parameterType="com.travel.bean.Order">
+		update order_info set state=#{state} where id=#{id}
+	</update>
+	<!-- 线路景点详情页面的游客点评的查询显示（根据线路名称查） -->
+	<select id="commentDisplay" resultMap="commentInfoMap">
+		SELECT * FROM comment_info c left join tourist_info u on c.userid=u.id
+		where  scenicSpotName=#{scenicSpotName} 
+	</select>
+	<!-- 用户查看个人的评论 -->
+	<select id="myCommentList" resultType="com.travel.bean.CommentInfo">
+		SELECT * FROM comment_info where userid=#{userid}
+	</select>
+	<delete id="delMyComment"
+		parameterType="com.travel.bean.CommentInfo">
+		delete from comment_info where pid=#{pid}
+	</delete>
+	<!-- 新闻页面查询 -->
+	<select id="newsList" resultType="com.travel.bean.NewsInfo">
+		SELECT * FROM news_info 
+	</select>
+	<!-- 跳转到新闻详情根据id显示 -->
+	<select id="newsListId" resultType="com.travel.bean.NewsInfo">
+		SELECT * FROM news_info  where id=#{id}
+	</select>
+	<!-- 展示导游信息 -->
+	<select id="guideList" resultType="com.travel.bean.UserInfo">
+		SELECT * FROM tourist_info  where role=#{role}
+	</select>
+</mapper>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.travel.dao.BackStageDao">
+	<resultMap id="scenicSpotInfoMap"
+		type="com.travel.bean.ScenicSpotInfo">
+		<result column="id" jdbcType="INTEGER" property="id" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="introduction" jdbcType="VARCHAR"
+			property="introduction" />
+		<result column="city" jdbcType="VARCHAR" property="city" />
+		<result column="photo" jdbcType="VARCHAR" property="photo" />
+		<result column="ticket" jdbcType="DATE" property="ticket" />
+		<result column="remarks" jdbcType="VARCHAR" property="remarks" />
+	</resultMap>
+
+<resultMap id="travelsMap" type="com.travel.bean.TravelsInfo">
+		<result column="id" jdbcType="INTEGER" property="id" />
+		<result column="userid" jdbcType="VARCHAR" property="userid" />
+		<result column="title" jdbcType="VARCHAR" property="title" />
+		<result column="cover" jdbcType="VARCHAR" property="cover" />
+		<result column="introduction" jdbcType="VARCHAR" property="introduction" />
+		<result column="text" jdbcType="VARCHAR" property="text" />
+		<result column="travelsphoto" jdbcType="VARCHAR" property="travelsphoto" />
+		<result column="fabulous" jdbcType="VARCHAR" property="fabulous" />
+		<result column="commentid" jdbcType="VARCHAR" property="commentid" />
+		<result column="creationtime" jdbcType="DATE" property="creationtime" />
+		<collection property="userInfo" ofType="com.travel.bean.UserInfo">
+	 <id column="id" property="id" /> 
+		<result column="user_name" jdbcType="VARCHAR" property="userName" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="photo" jdbcType="VARCHAR" property="photo" />
+		</collection>
+	</resultMap> 
+
+	<!-- 查询所有景点信息 -->
+	<select id="scenicSpotInfo" resultMap="scenicSpotInfoMap">
+		SELECT * FROM scenic_spot_info where 1=1
+		<if test='name!=null and name!=""'>
+			and name LIKE CONCAT(CONCAT('%',#{name},'%'))
+		</if>
+	</select>
+
+
+	<!-- 景点信息添加 -->
+	<insert id="addScenicSpotInfo"
+		parameterType="com.travel.bean.ScenicSpotInfo">
+		insert into scenic_spot_info
+		(id,type,name,introduction,city,photo,ticket,day)
+		values
+		(null,#{type},#{name},#{introduction},#{city},#{photo},#{ticket},#{day})
+	</insert>
+	
+	<!-- 根据线路名称查询线路id -->
+	
+	<select id="findScenicSpotName" resultType="com.travel.bean.ScenicSpotInfo">
+		SELECT id FROM scenic_spot_info
+		where name=#{scenicSpotName}
+	</select>
+	<!-- 景点信息详细添加 -->
+	<insert id="addScenicSpotInfoDetail"
+		parameterType="com.travel.bean.ItineraryRouteInfo">
+		insert into itinerary_route_info
+		(id,scenicSpotid,days,title,introduce,photo,photo2) values
+		(null,#{scenicSpotid},#{days},#{title},#{introduce},#{photo},#{photo2})
+	</insert>
+<!-- 根据编号删除线路信息 -->
+	<delete id="deletescenicSpotInfoByid"
+		parameterType="com.travel.bean.ScenicSpotInfo">
+		delete from scenic_spot_info where id=#{id}
+	</delete>
+	<!-- 根据id查询 -->
+	<select id="scenicSpotInfobyid" resultMap="scenicSpotInfoMap"
+		parameterType="com.travel.bean.ScenicSpotInfo">
+		SELECT * FROM scenic_spot_info
+		where id=#{id}
+	</select>
+
+
+	<!-- 查询所有订单信息，并且通过userName模糊查询 状态查询 -->
+	<select id="dindanInfoList" resultType="com.travel.bean.Order">
+		SELECT * FROM order_info where 1=1
+		<if test='userName!=null and userName!=""'>
+			and userName LIKE CONCAT(CONCAT('%',#{userName},'%'))
+		</if>
+		<if test='state!=null and state!=""'>
+			and state=#{state}
+		</if>
+	</select>
+
+
+	<!-- 根据订单编号显示订单信息 -->
+	<select id="doFindDindanInfoById"
+		resultType="com.travel.bean.Order">
+		SELECT * FROM order_info
+		where id=#{id}
+	</select>
+
+
+	<!-- 管理员修改订单信息 -->
+	<update id="doUpdateDindanInfo"
+		parameterType="com.travel.bean.Order">
+		update order_info set
+		name=#{name},number=#{number},total=#{total},state=#{state},contacts=#{contacts},phone=#{phone},departureTime=#{departureTime},daoyou=#{daoyou}
+		where id=#{id}
+	</update>
+	<!-- 根据订单编号删除订单信息 -->
+	<delete id="deleteDindanInfoByid"
+		parameterType="com.travel.bean.Order">
+		delete from order_info where id=#{id}
+	</delete>
+
+
+	<!-- 查询所有评论信息 -->
+	<select id="commentInfoList"
+		resultType="com.travel.bean.CommentInfo">
+		SELECT * FROM comment_info where 1=1
+		<if test='scenicSpotName!=null and scenicSpotName!=""'>
+			and scenicSpotName LIKE
+			CONCAT(CONCAT('%',#{scenicSpotName},'%'))
+		</if>
+	</select>
+
+	<!-- 根据评论编号删除评论信息 -->
+	<delete id="deleteCommentInfoByid"
+		parameterType="com.travel.bean.CommentInfo">
+		delete from comment_info where pid=#{id}
+	</delete>
+
+	<!-- 总用户数 -->
+	<select id="userTotal" parameterType="com.travel.bean.UserInfo"
+		resultType="int">
+		SELECT count(*) FROM tourist_info
+		where role=#{role}
+	</select>
+	<!-- 总营业额 -->
+	<select id="turnoverTotal" resultType="com.travel.bean.Order">
+		SELECT number,total FROM
+		order_info
+	</select>
+	<!-- 订单数量 -->
+	<select id="dindanTotal" parameterType="com.travel.bean.Order"
+		resultType="int">
+		SELECT count(*) FROM order_info
+	</select>
+	<!-- 查询景点类型 -->
+	<select id="scenicSpotType"
+		resultType="com.travel.bean.ScenicSpotTypesInfo">
+		SELECT * FROM
+		scenic_spot_types_info
+	</select>
+	<!-- 查询所有游记信息 -->
+	 <select id="getAllTravelsInfo" resultMap="travelsMap">
+		SELECT * FROM travels_info where 1=1
+		<if test='title!=null and title!=""'>
+			and title=#{title}
+		</if>
+	</select> 
+	<!-- 游记信息删除 -->
+	<delete id="deltravelsInfoByid"
+		parameterType="com.travel.bean.TravelsInfo">
+		delete from travels_info where id=#{id}
+	</delete>
+	<!-- 查询所有新闻信息 -->
+	 <select id="getAllNewsInfo"  resultType="com.travel.bean.NewsInfo">
+		SELECT * FROM news_info where 1=1
+		<if test='title!=null and title!=""'>
+			and title=#{title}
+		</if>
+	</select> 
+	<!-- 新闻信息删除 -->
+	<delete id="delnewsInfoByid"
+		parameterType="com.travel.bean.NewsInfo">
+		delete from news_info where id=#{id}
+	</delete>
+	<insert id="doSaveNewsInfo"
+		parameterType="com.travel.bean.NewsInfo">
+		insert into news_info
+		(id,title,author,text,creationTime) values
+		(null,#{title},#{author},#{text},#{creationTime})
+	</insert>
+	<!-- 性别数据统计 -->
+	<select id="genderStatistics"  resultType="com.travel.bean.UserInfo">
+		SELECT gender,birthday FROM tourist_info where role=3
+	</select> 
+	<!-- 根据id查询个人信息 -->
+	<select id="findPersonalInfoId"
+		resultType="com.travel.bean.UserInfo">
+		SELECT * FROM tourist_info
+		where id=#{id}
+	</select>
+	<!-- 管理人员修改个人信息 -->
+	<update id="adminUpdateUserInfo"
+		parameterType="com.travel.bean.UserInfo">
+		update tourist_info set
+		name=#{name},gender=#{gender},birthday=#{birthday},phone=#{phone},mailbox=#{mailbox},address=#{address}
+		where id=#{id}
+	</update>
+</mapper>

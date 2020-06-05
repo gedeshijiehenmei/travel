@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.travel.dao.UserInfoDao">
+	<resultMap id="userInfoMap" type="com.travel.bean.UserInfo">
+		<result column="id" jdbcType="INTEGER" property="id" />
+		<result column="user_name" jdbcType="VARCHAR"
+			property="userName" />
+		<result column="password" jdbcType="VARCHAR"
+			property="password" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="gender" jdbcType="VARCHAR" property="gender" />
+		<result column="birthday" jdbcType="DATE" property="birthday" />
+		<result column="photo" jdbcType="VARCHAR" property="photo" />
+		<result column="phone" jdbcType="VARCHAR" property="phone" />
+		<result column="role" jdbcType="VARCHAR" property="role" />
+		<result column="mailbox" jdbcType="VARCHAR" property="mailbox" />
+		<result column="address" jdbcType="VARCHAR" property="address" />
+		<result column="creationTime" jdbcType="DATE"
+			property="creationTime" />
+	</resultMap>
+
+	<!-- 查询所有用户信息 -->
+	<select id="selectAllUser" resultMap="userInfoMap">
+
+		SELECT * FROM tourist_info where 1=1
+		
+		<if test='role!=null and role!=""'>
+			and role=#{role}
+		</if>
+		<if test='userName!=null and userName!=""'>
+			and user_name LIKE CONCAT(CONCAT('%',#{userName},'%'))
+		</if>
+		<if test='state!=null and state!=""'>
+			and state=#{state}
+		</if>
+	</select>
+	<!-- 用户的启用和禁用 -->
+	<update id="doStateById"
+		parameterType="com.travel.bean.UserInfo">
+		update tourist_info set
+		state=#{state}
+		where id=#{id}
+	</update>
+	<!-- 根据id查询 -->
+	<select id="findUserId" resultMap="userInfoMap"
+		parameterType="com.travel.bean.UserInfo">
+		SELECT * FROM tourist_info
+		where id=#{id}
+	</select>
+
+	<!-- 游客信息更新 -->
+	<update id="updateUserInfo"
+		parameterType="com.travel.bean.UserInfo">
+		update tourist_info set
+		user_name=#{userName},password=#{password},name=#{name},gender=#{gender},birthday=#{birthday},photo=#{photo},phone=#{phone},mailbox=#{mailbox},mailbox=#{mailbox},state=#{state},address=#{address}
+		where id=#{id}
+	</update>
+
+	<!-- 添加游客信息 -->
+	<insert id="doSaveUserInfo"
+		parameterType="com.travel.bean.UserInfo">
+		insert into tourist_info
+		(id,user_name,password,name,gender,birthday,photo,phone,role,state,mailbox,address,creationTime)
+		values
+		(null,#{userName},#{password},#{name},#{gender},#{birthday},#{photo},#{phone},#{role},#{state},#{mailbox},#{address},#{creationTime})
+	</insert>
+	<!-- 游客信息删除 -->
+	<delete id="deleteuserInfoByid"
+		parameterType="com.travel.bean.UserInfo">
+		delete from tourist_info where id=#{id}
+	</delete>
+
+
+	<!-- 查询所有图片 -->
+	<!-- <select id="list" resultType="com.travel.dao.UserInfoDao">
+		select pid, pimage from product
+	</select>
+
+	<insert id="save" parameterType="com.travel.bean.Product">
+		insert into product(pimage)
+		values(#{pimage})
+	</insert> -->
+
+</mapper>

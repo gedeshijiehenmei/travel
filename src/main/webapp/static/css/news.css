@@ -1,0 +1,157 @@
+ul li{
+	margin: 0;
+	padding: 0;
+	
+}
+/* .tbody {
+	background: #4AA0E4 url(../image/img01.jpg) repeat;
+}
+
+.main-wrapper {
+	background: url(../image/img03.jpg) repeat;
+} */
+
+.news-body {
+	background: #fff;
+}
+
+.headline {
+	margin-top: 30px; margin-bottom : 30px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.headline h1 {
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.headline h1 a {
+	text-decoration: none;
+	color: #26a0d3;
+}
+
+.news-box {
+	height: 480px;
+}
+
+.news-left {
+	float: left;
+	display: inline;
+}
+
+.news-left-img {
+	
+}
+
+.news-left-img img {
+	width: 650px;
+	height: 415px;
+	margin-left: 10px;
+	border-radius: 5px;
+}
+
+.news-right {
+	float: right;
+	width: 500px;
+	height: 415px;
+	margin-left: 10px;
+}
+
+.news-head-2 {
+	
+}
+
+.news-head-2 h2 {
+	display: inline-block;
+	font-size: 24px;
+	padding-left: 34px;
+	color: #26a0d3;
+}
+
+.news-head-2 a {
+	padding-right: 20px;
+	color: #666;
+	float: right;
+}
+
+.news-head-3 {
+	
+}
+
+.news-head-3 ul {
+	list-style-type: none;
+	margin-bottom: 5px;
+}
+
+.news-head-3 ul li {
+	cursor: pointer;
+	line-height: 30px;
+	font-size: 18px;
+	    color: #333;
+    font: "Microsoft Yahei", "SimSun", Helvetica, Arial;
+}
+
+.news-head-3 a {
+	color: #333;
+	text-decoration: none;
+}
+
+.news-head-3 a:hover {
+	color: rgb(233, 51, 11);
+}
+
+.position {
+    font-size: 20px;
+    line-height: 4;
+    color: #26a0d3;
+    margin-top:6px;
+}
+.nav-t {
+    padding-bottom: 25px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #050001;
+}
+.article {
+    margin-bottom: 50px;
+    margin-top: 35px;
+}
+.article h1 {
+    font-size: 40px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.article-info {
+    font-size: 18px;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 50px;
+}
+.article-info span {
+    margin: 0 15px;
+}
+.content {
+    width: 100%;
+    border-bottom: 8px solid #e9e9e9;
+    position: relative;
+    margin: 0 auto;
+}
+.content p {
+    text-indent: 2em;
+    font-size: 20px;
+    line-height: 2;
+    text-align: justify;
+}
+.content-img{
+	width: 1200px;
+	height: auto;
+	text-align: center;
+	
+}
+.content-img img{
+	width: 1000px;
+	height: auto;
+	border-radius: 2px;
+	
+}

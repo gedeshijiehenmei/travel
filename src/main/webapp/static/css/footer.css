@@ -1,0 +1,303 @@
+@charset "UTF-8";
+
+#footer {
+	border-top: 2px solid #00af67;
+	background: #fff;
+	font-size: 12px;
+	line-height: 24px;
+}
+
+#footer a {
+	color: #666;
+	white-space: nowrap
+}
+
+#footer a:hover {
+	color: #00af67
+}
+
+.main_body {
+	clear: both;
+	width: 1200px;
+	margin: 0 auto;
+	*zoom: 1
+}
+
+.main_body:after, .main_body:before {
+	content: " ";
+	display: table;
+	height: 0
+}
+
+#topbar .guestItem, #topbar .isGuest .userItem {
+	display: none
+}
+
+.main_body:after {
+	clear: both
+}
+
+#footerEnsure {
+	padding: 14px 0 16px;
+	border-bottom: 1px solid #e9e9e9
+}
+
+#footerEnsure .badge {
+	position: relative;
+	float: left;
+	width: 385px;
+	margin: 0 0 0 15px;
+	padding: 4px 0 4px 70px;
+	line-height: 27px;
+	text-align: left;
+}
+
+#footerEnsure .badge:before {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #00af67;
+	font-size: 56px;
+	line-height: 1
+}
+
+#footerEnsure .badge dt {
+	color: #2a2a2a;
+	font-size: 18px
+}
+
+#footerEnsure .badge dd {
+	color: #999;
+	font-size: 14px
+}
+
+#footerEnsure .badge-service:before {
+	content:'';
+	background: url(../image/bao.png);
+	width: 65px;
+	height: 65px;
+	background-size: cover;
+	}
+
+#footerEnsure .badge-product:before {
+	content: '';
+	background: url(../image/wan.png);
+	width: 65px;
+	height: 65px;
+	background-size: cover;
+}
+
+#footerEnsure .badge-brand:before {
+	content: '';
+	background: url(../image/xin.png);
+	width: 65px;
+	height: 65px;
+	background-size: cover;
+}
+
+#footerAbout {
+	padding: 20px 0 25px;
+	white-space: nowrap
+}
+
+#footerAbout .aboutMain {
+	float: left
+}
+
+#footerAbout .aboutSub {
+	float: right
+}
+
+#footerAbout .aboutList {
+	float: left;
+	width: 145px;
+	padding: 0 0 2px 5px;
+	color: #999
+}
+
+#footerAbout .aboutList .title {
+	color: #333;
+	font-size: 14px;
+	line-height: 26px
+}
+
+#footerAbout .appPromo {
+	float: right;
+	padding-right: 10px;
+	color: #333;
+	line-height: 20px;
+	text-align: center
+}
+
+#footerAbout .appPromo .qrCode {
+	display: block;
+	width: 96px;
+	height: 96px;
+	margin: 0 0 7px;
+	border: 1px solid #ddd;
+	object-fit: cover
+}
+
+#footerAbout .service {
+	float: right;
+	width: 280px;
+	padding-top: 2px;
+	line-height: 20px
+}
+
+#footerAbout .service .title {
+	color: #acacac
+}
+
+#footerAbout .service .num {
+	color: #00af67;
+	font-size: 22px;
+	line-height: 30px;
+	white-space: normal;
+	width: 230px
+}
+
+#footerAbout .service .tip {
+	margin-top: 3px;
+	color: #333
+}
+
+#footerAbout .service .online {
+	display: inline-block;
+	height: 31px;
+	margin-top: 8px;
+	padding: 5px 11px 5px 8px;
+	background: #00af67;
+	color: #fff;
+	cursor: pointer
+}
+
+#footerAbout .service .online:before {
+	content: '\e7ad';
+	margin-right: 8px;
+	font-size: 18px;
+	vertical-align: -3px
+}
+
+#footerQuickLinks {
+	padding: 0 0 14px;
+	border-bottom: 1px solid #e9e9e9
+}
+
+#footerQuickLinks .group {
+	margin: 6px 0;
+	padding-left: 70px;
+	*zoom: 1
+}
+
+#footerQuickLinks .group:after {
+	content: '\0020';
+	display: block;
+	clear: both;
+	height: 0
+}
+
+#footerQuickLinks .title {
+	float: left;
+	overflow: hidden;
+	width: 5em;
+	margin-left: -68px;
+	color: #999;
+	white-space: nowrap
+}
+
+#footerQuickLinks .content {
+	position: relative;
+	width: 100%;
+	padding-right: 80px;
+	color: #666
+}
+
+#footerQuickLinks .links {
+	overflow: hidden;
+	float: left;
+	width: 100%
+}
+
+#footerQuickLinks .links a {
+	overflow: hidden;
+	float: left;
+	max-width: 30%;
+	margin-right: 12px;
+	white-space: nowrap;
+	text-overflow: ellipsis
+}
+
+#footerQuickLinks .more {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 72px;
+	color: #666;
+	cursor: pointer;
+	outline: 0
+}
+
+#footerQuickLinks .more:hover {
+	color: #00af67
+}
+
+#footerQuickLinks .more:before {
+	content: '\6536\8d77'
+}
+
+#footerQuickLinks .more:after {
+	content: '\e71f';
+	margin-left: 2px;
+	font-size: 14px
+}
+
+#footerQuickLinks .up {
+	overflow: hidden;
+	height: 48px
+}
+
+#footerQuickLinks .up .more:before {
+	content: '\66f4\591a'
+}
+
+#footerQuickLinks .up .more:after {
+	content: '\e71e'
+}
+
+#footerFriendLinks {
+	padding: 14px 0;
+	color: #666
+}
+
+#footerFriendLinks .title {
+	display: inline;
+	margin-right: 5px
+}
+
+#footerFriendLinks .title:after {
+	content: '：'
+}
+
+#footerFriendLinks .content {
+	display: inline
+}
+
+#footerFriendLinks a {
+	margin-right: 10px
+}
+
+#footerCopyright {
+	height: 46px;
+	padding: 15px 0;
+	color: #999;
+	font-size: 12px;
+	line-height: 20px
+}
+
+#footerCopyright a {
+	text-align: center;
+	color: #999
+}

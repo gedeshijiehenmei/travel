@@ -1,0 +1,403 @@
+@charset "UTF-8";
+ul{
+	 list-style-type:none;
+}
+hr{
+/* 	margin: 0;
+	padding-bottom: ; */
+}
+ 
+.lunbo {
+	margin-top: 20px;
+	
+}
+.territory {
+/* 	margin-top: 35px; */
+	width: 1110px;
+}
+
+.carousel-l {
+	width: 700px;
+}
+
+.territory_text {
+	height: 55px;
+	width: auto;
+	font-size: 27px;
+	font-family: PingFang SC;
+	text-align: center;
+	line-height: 3
+}
+
+.territory_img {
+	width: 190px;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+.territory_nav {
+	margin-left: 30px;
+	padding-top: 15px;
+}
+
+.territory_nav a {
+	margin-right: 45px;
+	font-size: 15px;
+}
+
+
+#citySwitch .layer .citySearch .searchForm:before, #citySwitch .port:before,
+	#headerPromo .serviceOnline:before {
+	font-family: iconfont;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+
+#headerPromo .serviceTel .transCode {
+	display: inline-block;
+	margin-left: 3px;
+	padding: 0 3px;
+	border-radius: 3px;
+	background: #ff7d13;
+	color: #fff;
+	line-height: 14px
+}
+
+#headerPromo .serviceOnline {
+	width: 105px;
+	height: 26px;
+	margin-top: 3px;
+	color: #00af67;
+	line-height: 26px;
+	cursor: pointer
+}
+
+#headerPromo .serviceOnline:before {
+	content: '\e7ad';
+	float: left;
+	margin-right: 10px;
+	color: #00af67;
+	font-size: 26px;
+	line-height: 26px
+}
+
+#headerPromo .serviceOnline:hover {
+	background: #f0fff9
+}
+
+:root #headerPromo .serviceOnline {
+	border-radius: 13px;
+	background: #f3f3f3
+}
+
+#billboard .entries:after, #cateMenu .title .tip:before, #filmstour .next:after,
+	#filmstour .prev:after, #focalArea:after {
+	content: '\0020'
+}
+
+#billboard .entry, #filmstour .page {
+	text-align: center;
+	white-space: nowrap
+}
+
+#filmstour .page, .tripList .link .name {
+	text-overflow: ellipsis;
+	overflow: hidden
+}
+
+#focalArea {
+	padding: 14px 0 25px;
+	*zoom: 1
+}
+
+#focalArea:after {
+	display: block;
+	clear: both;
+	height: 0
+}
+
+#billboard, #cateMenu, #filmstour {
+	float: left;
+	height: 340px;
+	background: #fff
+}
+
+#cateMenu {
+	position: relative;
+	z-index: 2;
+	width: 181px;
+	border: 2px solid #00af67;
+	color: #666;
+	font-size: 14px;
+	line-height: 22px
+}
+
+#cateMenu a {
+	color: #666;
+	white-space: nowrap
+}
+
+#cateMenu a:hover {
+	color: #00af67;
+}
+
+#cateMenu .hot {
+	color: #ff7d13;
+}
+
+#cateMenu .mark {
+	color: #00af67
+}
+
+#cateMenu .title {
+	color: #333;
+	-webkit-font-smoothing: subpixel-antialiased
+}
+
+#cateMenu .title a {
+	color: #333
+}
+
+#cateMenu .title .tip {
+	display: inline-block;
+	position: relative;
+	height: 16px;
+	margin: 0 0 0 -5px;
+	padding: 0 2px;
+	background: #fb6850;
+	color: #fff;
+	font-size: 12px;
+	line-height: 16px;
+	vertical-align: 2px
+}
+
+#cateMenu .title .tip:before {
+	display: block;
+	position: absolute;
+	top: 50%;
+	right: 100%;
+	width: 0;
+	height: 0;
+	margin: -3px 0 0;
+	border: 3px solid transparent;
+	border-right-color: #fb6850
+}
+
+#cateMenu .cateItem {
+	position: relative;
+	margin: 0 12px 0 13px;
+	padding: 7px 15px 7px 0;
+	border-top: 1px solid #eee
+}
+
+#cateMenu .cateItem:after, #cateMenu .cateItem:before {
+	content: '\0020';
+	display: block;
+	position: absolute
+}
+
+#cateMenu .cateItem:after {
+	top: 50%;
+	right: 2px;
+	width: 6px;
+	height: 9px;
+	margin-top: -4px;
+	background: url(../image/1.png) 0 -40px
+}
+
+#cateMenu .cateItem:first-child {
+	border-top: 0 none
+}
+
+#cateMenu .cateItem .place, #cateMenu .cateItem .title {
+	overflow: hidden;
+	width: 100%;
+	height: 27px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-webkit-transition: margin .15s ease-in;
+	-o-transition: margin .15s ease-in;
+	transition: margin .15s ease-in
+}
+
+#cateMenu .cateItem .title {
+	font-size: 16px
+}
+
+#cateMenu .cateItem .title a {
+	margin: 0 12px 0 0
+}
+
+#cateMenu .cateItem .place a {
+	margin: 0 7px 0 0
+}
+
+#cateMenu .cateItem.on {
+	z-index: 11;
+	margin: 0 0 -1px;
+	padding: 7px 22px 7px 13px;
+	border: 1px solid #00af67;
+	border-width: 1px 0;
+	background: #fff
+}
+
+#cateMenu .cateItem.on:first-child {
+	margin-top: -2px;
+	padding-top: 8px
+}
+
+#cateMenu .cateItem.on:last-child {
+	padding-bottom: 8px
+}
+
+#cateMenu .cateItem.on:before {
+	top: 0;
+	left: 100%;
+	width: 3px;
+	height: 100%;
+	background: #fff
+}
+
+#cateMenu .cateItem.on:after {
+	display: none
+}
+
+#cateMenu .cateItem.on .place, #cateMenu .cateItem.on .title {
+	margin-left: 3px
+}
+
+#cateMenu .popLayer {
+	overflow: hidden;
+	visibility: hidden;
+	position: absolute;
+	top: -2px;
+	left: 100%;
+	z-index: 10;
+	width: 0;
+	height: 416px;
+	border: 1px solid #00af67;
+	background: #fff;
+	-webkit-transition: width .1s ease-out;
+	-o-transition: width .1s ease-out;
+	transition: width .1s ease-out
+}
+
+#cateMenu .popLayer.show {
+	visibility: visible;
+	width: 453px
+}
+
+#cateMenu .popList {
+	display: none;
+	width: 450px;
+	padding: 18px 18px 18px 34px
+}
+
+#cateMenu .popItem {
+	margin: 0 0 15px
+}
+
+#cateMenu .popItem .title {
+	font-size: 16px;
+	line-height: 28px
+}
+
+#cateMenu .popItem .place a, #cateMenu .popItem .title a {
+	margin: 0 15px 0 0
+}
+/* 轮播 */
+.carousel {
+	height: 340px;
+}
+
+.border {
+	border: 1px solid red;
+	height: 340px;
+	width: 210px;
+	margin-left: 8px;
+}
+
+.card_size {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	width: 210px;
+	height: 290px;
+}
+
+.card {
+	width: 210px;
+}
+
+.card-img-top {
+	width: 208px;
+	height: 160px;
+}
+
+.card-body {
+	padding: 10px;
+}
+
+.card-text {
+	font-size: 14px;
+	font-family: "PingFang SC";
+}
+
+.card-text-ticket {
+	font-size: 18px;
+	color: red;
+	font-family: "PingFang SC";
+}
+
+.card-text-qi {
+	font-size: 12px;
+	font-family: "PingFang SC";
+	color: #2d2d2b;
+}
+
+.card-text-text {
+	font-size: 14px;
+	font-family: "PingFang SC";
+	color: #2d2d2b;
+	float: right;
+}
+  		.box ul, .box li {
+    list-style: none;
+    margin:2px;
+    padding: 0;
+}
+.box ul li {
+    float: left;
+    width: 33%;
+    text-align: center;
+}
+.box span{
+    color: #ff5905;
+    position: absolute;
+    top: 36px;
+    left: 30px;
+    font-size: 11px;
+}
+.box p{
+	  font-size: 12px;
+	  margin: 0px;
+	  padding:0px;
+	  margin-top: 8px;
+	  color: #999999;
+	  width:130px;
+	  text-align: left;
+}
+.box-main{
+	margin-top: 90px;
+	margin-left: 5px;
+	margin-right: 5px;
+	width: 200px;
+	height: 240px;
+	
+}
+.box-main-img{
+	background-image: url("../image/xtgg.PNG");
+	width: 200px;
+	height: 240px;
+	
+}

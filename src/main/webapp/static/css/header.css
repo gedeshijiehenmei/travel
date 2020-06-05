@@ -1,0 +1,282 @@
+@charset "UTF-8";
+
+html, body, nav, ul，div, li, span, h2 a{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+.header1 {
+	/* width: 1519.200px; */
+	height: 35.2px;
+	font-size: 13px;
+	background-color: #f8f9fa;
+	/* line-height: 30px; */
+}
+.main_body {
+    clear: both;
+    width: 1200px;
+    margin: 0 auto;
+    *zoom: 1;
+}
+.dropbtn {
+	border: none;
+	cursor: pointer;
+	height: 29px;
+	background-color: transparent;
+	color: #007bff;
+	margin-top: 2px;
+}
+.navbar-brand-text{
+	display:block;
+background-image: url("../image/logo.PNG")  ;
+background-size:100%;
+height: 80px;
+width: 200px;
+}
+/* 容器 <div> - 需要定位下拉内容 */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/* 下拉内容 (默认隐藏) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 100px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 9999;
+}
+
+/* 下拉菜单的链接 */
+.dropdown-content a {
+	color: #007bff;
+	padding: 12px 16px;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+}
+
+/* 鼠标移上去后修改下拉菜单链接颜色 */
+.dropdown-content a:hover {
+	background-color: #f1f1f1
+}
+
+/* 在鼠标移上去后显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.header2 {
+	/* width: 1200px; */
+	height: 98px;
+	/* margin-left: 180px; */
+	 padding-left: 20px; 
+	line-height: 85px;
+}
+
+.header3 {
+	background-color: #00911f;
+	z-index: 2;
+	height: 38px;
+	/* -webkit-font-smoothing: subpixel-antialiased; */
+}
+
+#headerSearch {
+	position: absolute;
+	top: 30px;
+	left: 320px;
+	z-index: 1;
+	width: 500px;
+	height: 38px;
+	padding: 2px 85px 2px 2px;
+	background: #00af67
+}
+
+#headerSearch .inputWrap {
+	position: relative;
+	height: 100%;
+	background: #fff
+}
+
+#headerSearch .inputWrap .searchInput, #headerSearch .inputWrap .searchPlaceholder
+	{
+	width: 100%;
+	height: 100%;
+	padding: 8px;
+	font-size: 14px;
+	line-height: 20px;
+	text-indent: 3px
+}
+
+#headerSearch .inputWrap .searchInput {
+	display: block;
+	position: relative;
+	z-index: 2;
+	float: left;
+	border: 0;
+	background: 0 0;
+	color: #333
+}
+
+#headerSearch .inputWrap .searchPlaceholder {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	color: #999
+}
+
+#headerSearch .inputWrap .keywords {
+	position: absolute;
+	top: 8px;
+	right: 9px;
+	z-index: 3
+}
+
+#headerSearch .inputWrap .keyword {
+	float: left;
+	height: 18px;
+	margin-left: 7px;
+	padding: 0 5px;
+	border-radius: 2px;
+	background: #f0f0f0;
+	color: #999;
+	font-size: 12px;
+	line-height: 18px;
+	cursor: pointer
+}
+
+#headerSearch .inputWrap .keyword:hover {
+	color: #666
+}
+
+#headerSearch .searchType {
+	position: absolute;
+	left: 2px;
+	top: 2px;
+	height: 34px;
+	background-color: #f8f8f8;
+	color: #999;
+	width: 70px;
+	cursor: pointer;
+	padding-left: 15px;
+	z-index: 5
+}
+
+#headerSearch .searchType>span {
+	line-height: 34px;
+	display: block;
+	height: 34px;
+	font-size: 14px;
+	position: relative
+}
+
+/* #headerSearch .searchType>span:after {
+	font-family: iconfont;
+	content: '\e71e';
+	font-size: 14px;
+	position: absolute;
+	left: 35px;
+	top: 0
+}
+ */
+#headerSearch .searchType .searchTypeBar {
+	width: 72px;
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	border-top: none;
+	position: absolute;
+	z-index: 99999;
+	top: 34px;
+	left: -1px;
+	display: none;
+	zoom: 1;
+}
+
+#headerSearch .searchType .searchTypeBar>div {
+	height: 33px;
+	border-top: 1px solid #efefef;
+	padding-left: 15px;
+	line-height: 32px;
+	font-size: 14px;
+	color: #999;
+}
+
+#headerSearch .searchType .searchTypeBar>div:hover {
+	background-color: #efefef;
+	color: #333
+}
+
+#headerSearch .searchType+.inputWrap {
+	padding-left: 70px
+}
+
+/* #headerSearch .searchType.active>span:after {
+	content: '\e71f'
+} */
+
+#headerSearch .searchType.active .searchTypeBar {
+	display: block
+}
+
+#headerSearch .searchButton {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 85px;
+	height: 100%;
+	color: #fff;
+	font-size: 16px;
+	line-height: 38px;
+	text-align: center;
+	cursor: pointer
+}
+
+#headerPromo {
+	position: absolute;
+	top: -10px;
+	right: 10px;
+	width: 174px
+}
+
+#headerPromo .serviceTel {
+	margin-top: 26px;
+	color: #999;
+	font-size: 12px;
+	white-space: nowrap
+}
+
+#headerPromo .serviceTel .label {
+	color: #999;
+	font-size: 12px;
+	line-height: 22px
+}
+
+#headerPromo .serviceTel .value {
+	color: #ff7d13;
+	font-size: 14px;
+	line-height: 20px
+}
+
+#headerPromo .serviceTel .tel {
+	display: block;
+	font-size: 20px;
+	-webkit-font-smoothing: subpixel-antialiased;
+	white-space: normal
+}
+.others{
+	background: url("../image/others.jpg") no-repeat;
+	height: 110px;
+	width: 270px;
+	margin: 50px auto auto;
+	
+}
+.others-text{
+	text-align: center;
+	padding-top: 15px;
+    color: #333;
+    font-weight: bolder;
+    font-size: 18px;
+}
